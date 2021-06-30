@@ -2,6 +2,22 @@ import java.util.Arrays;
 
 public class Arrays_Diameter {
 
+    public static void main(String[] args) {
+//        int[] A = {-1,-2,10,0,1,2,-3,-4,5,-6,-7,1,-2};
+//        int[] A = {1,2,-10,3,4,-5,6,7,-1,2};
+//        int[] A = {1,0,1,0,0,-1,-1,-1,10,-10,2,-1,0,199,0};
+//        int[] A = {8,-8, 9, -9, 20, -20, 5, -4};
+
+        int A[] = {3, -2, 5, 1}; // example array. should print { 10, -2, 12, 12, 12 }.
+        MaxSubInterval(A);   // O(n)
+        MinSubInterval(A);   // O(n)
+        CyclicDiam(A);       // O(n^2)
+        CyclicDiamByLevit(A); // O(n^2)
+        CyclicDiam_Best(A);  // O(n) - MAX{ Diam(A), SUM(A)-(-Diam(-A)) } // 4x O(n).
+    }
+
+
+
     public static void MaxSubInterval(int[] A) {System.out.println("(Diameter(A)) MaxSubInterval(" + Arrays.toString(A) + ") = " + Diam(A));
     } // return Diam(A)
     public static void MinSubInterval(int[] A) {
@@ -153,17 +169,5 @@ public class Arrays_Diameter {
 
 
 
-    public static void main(String[] args) {
-//        int[] A = {-1,-2,10,0,1,2,-3,-4,5,-6,-7,1,-2};
-//        int[] A = {1,2,-10,3,4,-5,6,7,-1,2};
-//        int[] A = {1,0,1,0,0,-1,-1,-1,10,-10,2,-1,0,199,0};
-//        int[] A = {8,-8, 9, -9, 20, -20, 5, -4};
 
-        int A[] = {3, -2, 5, 1}; // example array. should print { 10, -2, 12, 12, 12 }.
-        MaxSubInterval(A);   // O(n)
-        MinSubInterval(A);   // O(n)
-        CyclicDiam(A);       // O(n^2)
-        CyclicDiamByLevit(A); // O(n^2)
-        CyclicDiam_Best(A);  // O(n) - MAX{ Diam(A), SUM(A)-(-Diam(-A)) } // 4x O(n).
-    }
 }
